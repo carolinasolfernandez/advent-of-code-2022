@@ -45,18 +45,12 @@ func main() {
 	}
 
 	// Part 1
-	gridPart1 := make([]rune, len(grid))
-	copy(gridPart1, grid)
-
 	valuesPart1 := [][2]int{{start, 0}}
-	bestPart1 := getBest(valuesPart1, gridPart1, cols, rows, end)
+	bestPart1 := getBest(valuesPart1, grid, cols, rows, end)
 
 	fmt.Println(bestPart1)
 
 	// Part 2
-	gridPart2 := make([]rune, len(grid))
-	copy(gridPart2, grid)
-
 	bestPart2 := getBest(valuesPart2, grid, cols, rows, end)
 
 	fmt.Println(bestPart2)
