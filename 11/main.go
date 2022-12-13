@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"math"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -94,6 +95,7 @@ func main() {
 				break
 			}
 		}
+		sort.Ints(mostInspected)
 	}
 	fmt.Println(mostInspected[0] * mostInspected[1])
 
@@ -137,6 +139,7 @@ func main() {
 				break
 			}
 		}
+		sort.Ints(mostInspected)
 	}
 	fmt.Println(mostInspected[0] * mostInspected[1])
 }
