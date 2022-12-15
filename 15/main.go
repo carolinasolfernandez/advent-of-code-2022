@@ -59,7 +59,6 @@ func main() {
 	}
 
 	// Part 1
-	y := float64(2000000)
 	for _, sensor := range sensors {
 		dist := math.Abs(sensor.x-sensor.beacon.x) + math.Abs(sensor.y-sensor.beacon.y)
 
@@ -73,7 +72,7 @@ func main() {
 
 	positions := 0
 	for x := minX; x <= maxX; x++ {
-		covered, _ := positionCoveredBySensor(sensors, x, y)
+		covered, _ := positionCoveredBySensor(sensors, x, 2000000)
 		if covered {
 			positions++
 		}
@@ -83,12 +82,12 @@ func main() {
 	// Part 2
 	found := false
 	var tuning float64
-	for y2 := float64(0); y2 <= 4000000; y2++ {
+	for y := float64(0); y <= 4000000; y++ {
 		for x := float64(0); x <= 4000000; x++ {
-			covered, newX := positionCoveredBySensor(sensors, x, y2)
+			covered, newX := positionCoveredBySensor(sensors, x, y)
 			if covered == false {
 				found = true
-				tuning = x*4000000 + y2
+				tuning = x*4000000 + y
 				break
 			}
 			x = newX
