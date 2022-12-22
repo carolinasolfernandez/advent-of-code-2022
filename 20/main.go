@@ -22,7 +22,6 @@ func main() {
 	lines := strings.Split(string(content), "\n")
 
 	var mixedPart1, mixedPart2 []encrypt
-	pos := -1
 	for _, line := range lines {
 		if line == "" {
 			continue
@@ -33,10 +32,9 @@ func main() {
 			panic(err)
 		}
 
-		pos++
 		encrypted := encrypt{
 			number: number,
-			pos:    pos,
+			pos:    len(mixedPart1),
 		}
 		mixedPart1 = append(mixedPart1, encrypted)
 
